@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0f0f0"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/titleBarInclude"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_heigh"
+        layout="@layout/view_title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="#ffffff"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/image_voc_incar"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/ic_voc_top_air" />
+
+                <TextView
+                    android:id="@+id/text_voc_incar_static"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/image_voc_incar"
+                    android:layout_toRightOf="@id/image_voc_incar"
+                    android:text="有害气体评级"
+                    android:textColor="#1c1c1c"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/car_voc_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/text_voc_incar_static"
+                    android:layout_below="@id/text_voc_incar_static"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/voc_good"
+                    android:textColor="#007bf9"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/car_voc_state_getting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/text_voc_incar_static"
+                    android:layout_below="@id/text_voc_incar_static"
+                    android:layout_marginTop="2dp"
+                    android:text="正在检测..."
+                    android:textColor="#808080"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/voc_gas_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="12dp"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginBottom="4dp"
+                    android:src="@drawable/feed_back_info" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="有害气体"
+                    android:textColor="#b2b2b2"
+                    android:textSize="10dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#d9d9d9" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="8dp"
+            android:background="#d9d9d9" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#ffffff"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/image_voc_outdoor"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/ic_voc_top_outdoor" />
+
+                <TextView
+                    android:id="@+id/text_voc_outdoor_static"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/image_voc_outdoor"
+                    android:layout_toRightOf="@id/image_voc_outdoor"
+                    android:text="户外天气情况："
+                    android:textColor="#1c1c1c"
+                    android:textSize="11dp" />
+
+                <TextView
+                    android:id="@+id/outdoor_voc_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/text_voc_outdoor_static"
+                    android:layout_below="@id/text_voc_outdoor_static"
+                    android:layout_marginTop="5dp"
+                    android:text="晴"
+                    android:textColor="#00be48"
+                    android:textSize="13dp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/outdoor_voc_state_getting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/text_voc_outdoor_static"
+                    android:layout_below="@id/text_voc_outdoor_static"
+                    android:layout_marginTop="5dp"
+                    android:text="正在获取..."
+                    android:textColor="#808080"
+                    android:textSize="13dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/image_voc_window"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/ic_voc_top_window" />
+
+                <TextView
+                    android:id="@+id/text_voc_window_static"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/image_voc_window"
+                    android:layout_toRightOf="@id/image_voc_window"
+                    android:text="车窗："
+                    android:textColor="#1c1c1c"
+                    android:textSize="11dp" />
+
+                <TextView
+                    android:id="@+id/window_voc_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/text_voc_window_static"
+                    android:layout_below="@id/text_voc_window_static"
+                    android:layout_marginTop="5dp"
+                    android:text="建议开启"
+                    android:textColor="#00be48"
+                    android:textSize="13dp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/window_voc_state_getting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/text_voc_window_static"
+                    android:layout_below="@id/text_voc_window_static"
+                    android:layout_marginTop="5dp"
+                    android:text="--"
+                    android:textColor="#808080"
+                    android:textSize="13dp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#ffffff"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/image_voc_purifier"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/ic_voc_top_purifier" />
+
+                <TextView
+                    android:id="@+id/text_voc_purifier_static"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/image_voc_purifier"
+                    android:layout_toRightOf="@id/image_voc_purifier"
+                    android:text="空气净化器："
+                    android:textColor="#1c1c1c"
+                    android:textSize="11dp" />
+
+                <TextView
+                    android:id="@+id/purifier_voc_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/text_voc_purifier_static"
+                    android:layout_below="@id/text_voc_purifier_static"
+                    android:layout_marginTop="5dp"
+                    android:text="建议开启"
+                    android:textColor="#00be48"
+                    android:textSize="13dp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/purifier_voc_state_getting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/text_voc_purifier_static"
+                    android:layout_below="@id/text_voc_purifier_static"
+                    android:layout_marginTop="5dp"
+                    android:text="--"
+                    android:textColor="#808080"
+                    android:textSize="13dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/image_voc_circulation"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/ic_voc_top_circulation" />
+
+                <TextView
+                    android:id="@+id/text_voc_circulation_static"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/image_voc_circulation"
+                    android:layout_toRightOf="@id/image_voc_circulation"
+                    android:text="换风系统："
+                    android:textColor="#1c1c1c"
+                    android:textSize="11dp" />
+
+                <TextView
+                    android:id="@+id/circulation_voc_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/text_voc_circulation_static"
+                    android:layout_below="@id/text_voc_circulation_static"
+                    android:layout_marginTop="5dp"
+                    android:text="建议开启"
+                    android:textColor="#00be48"
+                    android:textSize="13dp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/circulation_voc_state_getting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/text_voc_circulation_static"
+                    android:layout_below="@id/text_voc_circulation_static"
+                    android:layout_marginTop="5dp"
+                    android:text="--"
+                    android:textColor="#808080"
+                    android:textSize="13dp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#d9d9d9" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:id="@+id/voc_progressbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <ProgressBar
+                android:id="@+id/voc_progressbar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:layout_marginLeft="49dp"
+                android:layout_marginRight="49dp"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/voc_progressbar_color" />
+
+            <TextView
+                android:id="@+id/voc_left_seconds_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_horizontal"
+                android:text="正在预热，还需要约38秒"
+                android:textColor="#4d4d4d"
+                android:textSize="11dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/voc_result_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <com.tencent.obd.view.VocValueLineView
+                android:id="@+id/voc_valueline_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_voc_diagram" >
+
+                <LinearLayout
+                    android:id="@+id/obd_voc_brand_layout"
+                    android:layout_width="152dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/obd_voc_brand_bg"
+                    android:orientation="vertical"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="12dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:text="车内有害气体指数"
+                        android:textColor="#1a1a1a"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/car_voc_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginTop="3dp"
+                        android:text="296"
+                        android:textColor="#007bf9"
+                        android:textSize="26dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/car_voc_tips"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/voc_good_content"
+                        android:textColor="#4d4d4d"
+                        android:textSize="12dp" />
+                </LinearLayout>
+            </com.tencent.obd.view.VocValueLineView>
+
+            <include layout="@layout/obd_voc_diagram_bottom_view" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
